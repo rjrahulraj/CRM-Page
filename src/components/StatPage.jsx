@@ -73,6 +73,11 @@ const StatsPage = () => {
     }
   }
 
+  // note:-I did'nt get any api of date (and required data) from online so that i used random api to fetch but didn,t used in these api these in filter login instead i generate the data from JS Module.
+  // Please cConsider 
+
+  
+
   useEffect(() => {
     fetchUser();
   }, []);
@@ -81,7 +86,7 @@ const StatsPage = () => {
     labels: filter1(),
     datasets: [
       {
-        label: 'Sales',
+          label:"Sales",
         data: filter2(),
         fill: false,
         backgroundColor: 'rgba(75,192,192,1)',
@@ -104,7 +109,7 @@ const StatsPage = () => {
     labels: filter1(),
     datasets: [
       {
-        label: 'Sales',
+        label: 'new users',
         data: filter2(),
         backgroundColor: filter3(),
         borderColor: 'rgba(153,102,255,1)',
@@ -141,26 +146,40 @@ const StatsPage = () => {
         <StatCard title="Active Users" value={Math.floor(Math.random() * 50)} />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1  md:grid-cols-2  items-center gap-4">
+
+
         {/* Line Chart */}
-        <div className="bg-white p-4 shadow-md rounded-lg">
+        <div className="bg-white p-4 flex flex-col items-center shadow-md rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Sales Over Time (Line Chart)</h2>
           <Line data={lineData} />
         </div>
 
 
-         {/* Bar Chart */}
-         <div className="bg-white p-4 shadow-md rounded-lg">
+        
+       
+         
+
+
+          {/* Bar Chart */}
+          <div className="bg-white  p-4 flex flex-col items-center shadow-md rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Sales Over Time (Bar Chart)</h2>
           <Bar data={barData} />
         </div>
 
-
-        {/* Pie Chart */}
-        <div className="bg-white p-4  shadow-md rounded-lg">
+          {/* Pie Chart */}
+         <div className="bg-white p-4  h-[110vh] flex flex-col items-center shadow-md rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Sales Distribution (Pie Chart)</h2>
-          <Pie data={pieData} />
+          <Pie  data={pieData} />
         </div>
+
+        
+        
+
+
+
+
+
         
        
       </div>
