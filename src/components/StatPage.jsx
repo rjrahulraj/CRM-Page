@@ -157,7 +157,7 @@ const StatsPage = () => {
 
 
         {/* Pie Chart */}
-        <div className="bg-white p-4 shadow-md rounded-lg">
+        <div className="bg-white p-4  shadow-md rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Sales Distribution (Pie Chart)</h2>
           <Pie data={pieData} />
         </div>
